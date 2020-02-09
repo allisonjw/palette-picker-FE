@@ -15,11 +15,11 @@ export const getProjectById = async (id) => {
     return data;
 };
 
-export const addProject = async (newProject) => {
+export const addProject = async (project_name) => {
     const options = {
       method: 'POST',
       body: JSON.stringify({
-      name: newProject
+        project_name
       }),
       headers: {
         'content-type': 'application/json'
@@ -29,8 +29,8 @@ export const addProject = async (newProject) => {
     if (!response.ok && response.status !== 422) {
       throw Error('Unable to add project.')
     };
-    const addedProject = await response.json();
-    return addedProject;
+    const id = await response.json();
+    return id;
 };
 
 export const updateProject = async () => {
@@ -56,8 +56,22 @@ export const getPaletteById = async (id) => {
     return data;
 };
 
-export const addPalette = async () => {
-
+export const addPalette = async (palette) => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        palette
+      }),
+      headers: {
+        'content-type': 'application/json'
+      }
+    };
+    const response = await fetch(`${baseUrl}/palettes`, options);
+    if (!response.ok && response.status !== 422) {
+      throw Error('Unable to add palette.')
+    };
+    const addedPalette = await response.json();
+    return addedPalette;
 };
 
 export const updatePalette = async () => {
