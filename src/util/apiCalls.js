@@ -1,21 +1,36 @@
 const baseUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1';
 
-export const getProjects = async () => {
+export const getAllProjects = async () => {
     const response = await fetch(`${baseUrl}/projects`)
     if (!response.ok) {
       throw Error('Unable to get projects. Try again later.')
     }
     const projects = await response.json();
-    // console.log(projects)
     return projects;
 };
 
-export const getProjectById = async () => {
-
+export const getProjectById = async (id) => {
+    const response = await fetch(`${baseUrl}/projects/${id}`);
+    const data = response.json();
+    return data;
 };
 
-export const addProject = async () => {
-
+export const addProject = async (newProject) => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+      name: newProject
+      }),
+      headers: {
+        'content-type': 'application/json'
+      }
+    };
+    const response = await fetch(`${baseUrl}/projects`, options);
+    if (!response.ok && response.status !== 422) {
+      throw Error('Unable to add project.')
+    };
+    const addedProject = await response.json();
+    return addedProject;
 };
 
 export const updateProject = async () => {
@@ -26,7 +41,7 @@ export const deleteProject = async () => {
 
 };
 
-export const getPalettes = async () => {
+export const getAllPalettes = async () => {
     const response = await fetch(`${baseUrl}/palettes`)
     if (!response.ok) {
       throw Error('Unable to get palettes. Try again later.')
@@ -34,10 +49,11 @@ export const getPalettes = async () => {
     const palettes = await response.json();
     return palettes;
 };
-console.log(getPalettes)
 
-export const getPaletteById = async () => {
-
+export const getPaletteById = async (id) => {
+    const response = await fetch(`${baseUrl}/palettes/${id}`);
+    const data = response.json();
+    return data;
 };
 
 export const addPalette = async () => {
