@@ -37,8 +37,16 @@ export const updateProject = async () => {
 
 };
 
-export const deleteProject = async () => {
-
+export const deleteProject = async (id) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    const response = await fetch(`${baseUrl}/projects/${id}`, options);
+    const data = response.json();
+    return data;
 };
 
 export const getAllPalettes = async () => {
@@ -74,12 +82,29 @@ export const addPalette = async (palette) => {
     return addedPalette;
 };
 
-export const updatePalette = async () => {
-
+export const updatePalette = async (update, id) => {
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(update)
+    };
+    const response = await fetch(`${baseUrl}/palettes/${id}`, options);
+    const data = response.json();
+    return data;
 };
 
-export const deletePalette = async () => {
-
+export const deletePalette = async (id) => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    const response = await fetch(`${baseUrl}/palettes/${id}`, options);
+    const data = response.json();
+    return data;
 };
   
   
