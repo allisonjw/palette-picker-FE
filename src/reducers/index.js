@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { palette } from './paletteReducer';
-import { project } from './projectReducer';
+import { paletteReducer } from './paletteReducer';
+import { projectReducer } from './projectReducer';
 
 export const rootReducer = combineReducers ({ //for testing
-    palette,
-    project
+    palettes: paletteReducer,
+    projects: projectReducer
 })
 
 export default rootReducer; //access to index

@@ -5,7 +5,7 @@ export const setPalettes = (palettes) => ({
 
 export const addPalette = (id, palette_name, color_1, color_2, color_3, color_4, color_5, project_id) => ({
     type: 'ADD_PALETTE',
-    palette = {
+    palette: {
         id,
         palette_name,
         color_1,
@@ -35,7 +35,7 @@ export const setProjects = (projects) => ({
 
 export const addProject = (project_name, id) => ({
     type: 'ADD_PROJECT',
-    project = {
+    project: {
         project_name,
         id
     }

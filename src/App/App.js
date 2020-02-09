@@ -1,8 +1,10 @@
 
-import React, { useState, useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+import React, {useState, useEffect} from 'react';
 import { getAllProjects, getAllPalettes } from '../util/apiCalls';
 import './App.scss';
+import ProjectContainer from '../ProjectContainer/ProjectContainer';
+import ColorContainer from '../ColorContainer/ColorContainer';
+
 
 const App = () => {
   // const dispatch = useDispatch();
@@ -47,6 +49,8 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <p>Palette Picker</p>
+        <ProjectContainer/>
+        <ColorContainer/>
       </header>
     </div>
   );
