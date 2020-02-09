@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { palette } from './paletteReducer';
 import { project } from './projectReducer';
 
-export const rootReducer = combinedReducers ({ //for testing
+export const rootReducer = combineReducers ({ //for testing
     palette,
     project
 })
