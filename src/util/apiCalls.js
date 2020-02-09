@@ -33,8 +33,17 @@ export const addProject = async (project_name) => {
     return id;
 };
 
-export const updateProject = async () => {
-
+export const updateProject = async (update, id) => {
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(update)
+    };
+    const response = await fetch(`${baseUrl}/projects/${id}`, options);
+    const data = response.json();
+    return data;
 };
 
 export const deleteProject = async (id) => {
