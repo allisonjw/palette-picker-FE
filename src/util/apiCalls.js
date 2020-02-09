@@ -32,9 +32,9 @@ export const getPalettes = async () => {
       throw Error('Unable to get palettes. Try again later.')
     }
     const palettes = await response.json();
-    // console.log(palettes)
     return palettes;
 };
+console.log(getPalettes)
 
 export const getPaletteById = async () => {
 
