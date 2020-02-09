@@ -6,7 +6,23 @@ export const getProjects = async () => {
       throw Error('Unable to get projects. Try again later.')
     }
     const projects = await response.json();
-    console.log(projects)
+    // console.log(projects)
     return projects;
+};
+
+export const getProjectById = async () => {
+
+};
+
+export const addProject = async () => {
+
+};
+
+export const updateProject = async () => {
+
+};
+
+export const deleteProject = async () => {
+
 };
   
