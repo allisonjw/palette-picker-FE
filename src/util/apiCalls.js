@@ -25,4 +25,31 @@ export const updateProject = async () => {
 export const deleteProject = async () => {
 
 };
+
+export const getPalettes = async () => {
+    const response = await fetch(`${baseUrl}/palettes`)
+    if (!response.ok) {
+      throw Error('Unable to get palettes. Try again later.')
+    }
+    const palettes = await response.json();
+    // console.log(palettes)
+    return palettes;
+};
+
+export const getPaletteById = async () => {
+
+};
+
+export const addPalette = async () => {
+
+};
+
+export const updatePalette = async () => {
+
+};
+
+export const deletePalette = async () => {
+
+};
+  
   
