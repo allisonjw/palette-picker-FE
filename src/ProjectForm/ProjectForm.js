@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './PaletteForm.scss';
+import './ProjectForm.scss';
 
-class PaletteForm extends Component {
+class ProjectForm extends Component {
     constructor() {
         super()
         this.state = {
@@ -11,12 +11,11 @@ class PaletteForm extends Component {
     render() {
         return(
             <form>
-                <select>project # 1</select>
                 <input/>
-                <button>Submit Palette</button>
+                <button>Submit Project</button>
             </form>
         )
     }
 }
 
-export default PaletteForm;
+export default ProjectForm;
