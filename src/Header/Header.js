@@ -3,9 +3,9 @@ import './Header.scss';
 
 const Header = () => {
     return(
-        <div>
+        <header className="header">
             <h1>WELCOME TO PALETTE PICKER</h1>
-        </div>
+        </header>
     )
 }
 

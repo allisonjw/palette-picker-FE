@@ -44,18 +44,22 @@ const ColorContainer = () => {
     }
 
     return(
+        <>
         <section className="section_colorContainer">
             <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
             <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
             <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
             <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
             <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
+        </section>
+        <section className="generate_btn-section">   
         <button
             type='button'
             className='generate_colors-btn'
             onClick={generateRandomColor}>GENERATE COLORS
         </button>
         </section>
+        </>
     )
 }
 

@@ -1,0 +1,21 @@
+.section_colorContainer {
+    display: flex;
+    height: 30vh;
+}
+
+.generate_btn-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.generate_colors-btn {
+    border-radius: 3px;
+    height: 60px;
+    font-size: 1.3em;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all .4s ease-in-out;
+      }
+}
