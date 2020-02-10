@@ -1,33 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import './ProjectContainer.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { getAllProjects } from '../util/apiCalls';
-import { setProjects } from '../actions';
 import Project from '../Project/Project';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setProjects } from '../actions';
+import { getAllProjects } from '../util/apiCalls';
+import './ProjectContainer.scss';
 
 export const ProjectContainer = () => {
     const dispatch = useDispatch();
-    const [project, setProjects] = useState([]);
-    const displayProjects = useSelector(state => console.log('state', state)) //payload. will utilize useEffect with displayProjects
-    console.log('displayProjects', displayProjects)
+    const [project, setAllProjects] = useState([]);
+    const projects = useSelector(state => state.projects)
 
-    useEffect(() => {
         const fetchProjects = async () => {
           try {
             const response = await getAllProjects();
-            console.log('responseProjects', response)
-            // setProjects(response.projects);
-         dispatch(setProjects(response));
+            setAllProjects(response.projects);
+            dispatch(setProjects(response));
           } catch(error) {
               console.log(error);
           }
         };
+      useEffect(() => {
         fetchProjects();
       }, []);
 
       return(
           <section>
-              <Project displayProjects={displayProjects}/>
+              <Project projects={projects}/>
           </section>
       )
     

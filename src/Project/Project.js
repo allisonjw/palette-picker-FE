@@ -6,7 +6,7 @@ import './Project.scss'
 const Project = () => {
     return(
         <div>
-            //whatever component goes in here
+            <p>Hello</p>
         </div>
     )
 }
