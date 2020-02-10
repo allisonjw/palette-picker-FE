@@ -18,9 +18,7 @@ export const getProjectById = async (id) => {
 export const addProject = async (project_name) => {
     const options = {
       method: 'POST',
-      body: JSON.stringify({
-        project_name
-      }),
+      body: JSON.stringify(project_name),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -76,9 +74,7 @@ export const getPaletteById = async (id) => {
 export const addPalette = async (palette) => {
     const options = {
       method: 'POST',
-      body: JSON.stringify({
-        palette
-      }),
+      body: JSON.stringify(palette),
       headers: {
         'Content-Type': 'application/json'
       }

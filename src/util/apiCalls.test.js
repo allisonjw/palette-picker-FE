@@ -187,7 +187,7 @@ describe('apiCalls.js', () => {
             });
           });
       
-          it.skip('should fetch with the correct arguments', () => {
+          it('should fetch with the correct arguments', () => {
             const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes'
             const mockPalette = {
                 palette_name: "Modern",
