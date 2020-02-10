@@ -102,11 +102,44 @@ describe('apiCalls.js', () => {
     })
 
     describe('getProjectById', () => {
-
+        beforeEach(() => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok: true,
+                json: () => Promise.resolve(projects[0])
+              });
+            });
+          });
+          it('should fetch with the correct URL (HAPPY)', () => {
+            let mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/projects/9';
+            getProjectById(9);
+            expect(window.fetch).toHaveBeenCalledWith(mockUrl);
+          });
+          it('should return a project for a given Id (HAPPY)', async () => {
+            const results = await getPaletteById(9);
+            expect(results).toEqual(projects[0]);
+          });
     });
 
     describe('getPaletteById', () => {
-
+        beforeEach(() => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok: true,
+                json: () => Promise.resolve(palettes[0])
+              });
+            });
+          });
+          it('should fetch with the correct URL (HAPPY)', () => {
+            let mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes/9';
+            getPaletteById(9);
+            expect(window.fetch).toHaveBeenCalledWith(mockUrl);
+          });
+          it('should return a palette for a given Id (HAPPY)', async () => {
+            const results = await getPaletteById(9);
+            expect(results).toEqual(palettes[0]);
+          });
+        
     });
     
     describe('addPalette', () => {
