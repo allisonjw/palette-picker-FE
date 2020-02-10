@@ -24,7 +24,7 @@ export const ProjectContainer = () => {
       }, []);
 
       return(
-          <section>
+          <section className="section_projectContainer">
               <Project projects={projects}/>
           </section>
       )
