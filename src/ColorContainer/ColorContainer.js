@@ -1,10 +1,10 @@
-import Palette from '../Palette/Palette';
 import ColorCard from '../ColorCard/ColorCard';
 import { getAllPalettes } from '../util/apiCalls';
 import { setPalettes, lockColor, deletePalette } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import './ColorContainer.scss';
+import Palette from '../Palette/Palette';
 
 const ColorContainer = () => {
     const dispatch = useDispatch()
