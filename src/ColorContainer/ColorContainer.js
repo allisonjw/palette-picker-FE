@@ -1,7 +1,7 @@
 import Palette from '../Palette/Palette';
 import ColorCard from '../ColorCard/ColorCard';
 import { getAllPalettes } from '../util/apiCalls';
-import { setPalettes } from '../actions';
+import { setPalettes, lockColor, deletePalette } from '../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import './ColorContainer.scss';
@@ -24,12 +24,36 @@ const ColorContainer = () => {
       fetchPalettes();
     }, []);
 
+    const toggleLock = () => {
+        // dispatch(lockColor())
+    }
+
+    const deleteColorPalette = (id) => {
+        dispatch(deletePalette(id))
+    }
+
+    const generateRandomColor = () => {
+
+    }
+
+    const currentPalette = () => {
+        let color = Math.floor(Math.random()*16777215).toString(16)
+        return color
+    }
+
     return(
-        <div>
-            <ColorCard palettes={palettes}/>
-            <Palette palettes={palettes}/>
-            <button>GENERATE COLORS</button>
-        </div>
+        <section className="section_colorContainer">
+            <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
+            <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
+            <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
+            <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
+            <ColorCard toggleLock={toggleLock()} currentPalette={currentPalette()}/>
+        <button
+            type='button'
+            className='generate_colors-btn'
+            onClick={generateRandomColor}>GENERATE COLORS
+        </button>
+        </section>
     )
 }
 
