@@ -91,7 +91,7 @@ describe('apiCalls.js', () => {
               })
             });
       
-            const mockUrl = 'http://palette-pick-be.herokuapp.com/api/v1/palette'
+            const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes'
       
             expect(getAllPalettes(mockUrl)).rejects.toEqual(Error("Unable to get palettes. Try again later."))
           });
@@ -169,7 +169,65 @@ describe('apiCalls.js', () => {
     });
     
     describe('addPalette', () => {
+        let mockResponse = {
+            palette_name: "Modern",
+            color_1: "#AE2D49",
+            color_2: "#21354A",
+            color_3: "#4EB47A",
+            color_4: "#C9CFC8",
+            color_5: "#F6C876"
+          };
+      
+          beforeEach(() => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok:true,
+                json: () => Promise.resolve(mockResponse)
+              })
+            });
+          });
+      
+          it.skip('should fetch with the correct arguments', () => {
+            const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes'
+            const mockPalette = {
+                palette_name: "Modern",
+                color_1: "#AE2D49",
+                color_2: "#21354A",
+                color_3: "#4EB47A",
+                color_4: "#C9CFC8",
+                color_5: "#F6C876"
+            };
 
+            const expected = [mockUrl, {
+              method: 'POST',
+              body: JSON.stringify(mockPalette),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            }]
+      
+            addPalette(mockPalette)
+            expect(window.fetch).toHaveBeenCalledWith(...expected)
+          });
+      
+          it('should post a palette (HAPPY)', () => {
+            const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes'
+
+            addPalette(mockUrl)
+            .then(results => expect(results).toEqual(mockResponse))
+          });
+      
+          it('should return an error (SAD)', () => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok: false,
+                statusText: "Unable to add palette."
+              })
+            });
+      
+            const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes'
+            expect(addPalette(mockUrl)).rejects.toEqual(Error("Unable to add palette."))
+          });
     });
     
     describe('addProject', () => {
@@ -185,7 +243,7 @@ describe('apiCalls.js', () => {
               ok: true
             })
           })
-        })
+        });
 
         it('should be called with the correct arguments', () => {
           const id = 1
@@ -209,13 +267,45 @@ describe('apiCalls.js', () => {
         });
 
         const mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${1}`
-
         expect(deleteProject(mockUrl)).rejects.toEqual(Error("Error"))
-        })
+        });
     });
 
     describe('deletePalette', () => {
+        let mockResponse = "Palette with an id of 5 successfully deleted."
 
+        beforeEach(() => {
+          window.fetch = jest.fn().mockImplementation(() => {
+            return Promise.resolve({
+              ok: true
+            })
+          })
+        });
+
+        it('should be called with the correct arguments', () => {
+          const id = 1
+          const expected = [`https://palette-of-colors-picker.herokuapp.com/api/v1/palettes/${1}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }]
+
+        deletePalette(id)
+        expect(window.fetch).toHaveBeenCalledWith(...expected)
+        });
+
+        it('should return an error (SAD)', () => {
+          window.fetch = jest.fn().mockImplementation(() => {
+            return Promise.resolve({
+              ok: false,
+              statusText: "Error"
+            })
+        });
+
+        const mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/palettes/${1}`
+        expect(deletePalette(mockUrl)).rejects.toEqual(Error("Error"))
+        });
     });
 
     describe('updateProject', () => {
