@@ -26,7 +26,7 @@ describe('apiCalls.js', () => {
                     user_id: 6
                 }
             ]
-          }
+        };
       
           beforeEach(() => {
             window.fetch = jest.fn().mockImplementation(() => {
@@ -41,7 +41,7 @@ describe('apiCalls.js', () => {
             const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/projects'
             getAllProjects(mockUrl)
             expect(window.fetch).toHaveBeenCalledWith(mockUrl)
-          })
+          });
     });
 
     describe('getAllPalettes', () => {
@@ -59,7 +59,7 @@ describe('apiCalls.js', () => {
                     timestamps: null
                 }
             ]
-          }
+        };
       
           beforeEach(() => {
             window.fetch = jest.fn().mockImplementation(() => {
@@ -74,14 +74,14 @@ describe('apiCalls.js', () => {
             const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes'
             getAllPalettes(mockUrl)
             expect(window.fetch).toHaveBeenCalledWith(mockUrl)
-          })
+          });
       
           it('should return an array of palettes (HAPPY)', () => {
             const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes'
       
             getAllPalettes(mockUrl)
             .then(results => expect(results).toEqual(mockResponse))
-          })
+          });
       
           it('should return an error (SAD)', () => {
             window.fetch = jest.fn().mockImplementation(() => {
@@ -89,13 +89,13 @@ describe('apiCalls.js', () => {
                 ok: false,
                 statusText: "Unable to get palettes. Try again later."
               })
-            })
+            });
       
             const mockUrl = 'http://palette-pick-be.herokuapp.com/api/v1/palette'
       
             expect(getAllPalettes(mockUrl)).rejects.toEqual(Error("Unable to get palettes. Try again later."))
-          })
-    })
+          });
+    });
 
     describe('getProjectById', () => {
         let mockResponse = {
@@ -118,7 +118,7 @@ describe('apiCalls.js', () => {
         });
 
           it('should fetch with the correct URL (HAPPY)', () => {
-            let mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/projects/9';
+            let mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${9}`;
             getProjectById(9);
             expect(window.fetch).toHaveBeenCalledWith(mockUrl);
           });
@@ -156,7 +156,7 @@ describe('apiCalls.js', () => {
         });
 
           it('should fetch with the correct URL (HAPPY)', () => {
-            let mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/palettes/1';
+            let mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/palettes/${1}`;
             getPaletteById(1);
             expect(window.fetch).toHaveBeenCalledWith(mockUrl);
           });
@@ -177,7 +177,41 @@ describe('apiCalls.js', () => {
     });
 
     describe('deleteProject', () => {
+        let mockResponse = "Project with an id of 5 successfully deleted."
 
+        beforeEach(() => {
+          window.fetch = jest.fn().mockImplementation(() => {
+            return Promise.resolve({
+              ok: true
+            })
+          })
+        })
+
+        it('should be called with the correct arguments', () => {
+          const id = 1
+          const expected = [`https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${1}`, {
+            method: 'DELETE',
+            headers: {
+            'Content-Type': 'application/json'
+            }
+          }]
+
+        deleteProject(id)
+        expect(window.fetch).toHaveBeenCalledWith(...expected)
+        });
+
+        it('should return an error (SAD)', () => {
+        window.fetch = jest.fn().mockImplementation(() => {
+            return Promise.resolve({
+              ok: false,
+              statusText: "Error"
+            })
+        });
+
+        const mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${1}`
+
+        expect(deleteProject(mockUrl)).rejects.toEqual(Error("Error"))
+        })
     });
 
     describe('deletePalette', () => {
