@@ -40,8 +40,11 @@ export const updateProject = async (update, id) => {
       body: JSON.stringify(update)
     };
     const response = await fetch(`${baseUrl}/projects/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const deleteProject = async (id) => {
@@ -99,8 +102,11 @@ export const updatePalette = async (update, id) => {
       body: JSON.stringify(update)
     };
     const response = await fetch(`${baseUrl}/palettes/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const deletePalette = async (id) => {
