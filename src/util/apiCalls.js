@@ -52,8 +52,11 @@ export const deleteProject = async (id) => {
       }
     };
     const response = await fetch(`${baseUrl}/projects/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const getAllPalettes = async () => {
@@ -108,8 +111,11 @@ export const deletePalette = async (id) => {
       }
     };
     const response = await fetch(`${baseUrl}/palettes/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
   
   
