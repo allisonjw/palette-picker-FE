@@ -18,19 +18,17 @@ export const getProjectById = async (id) => {
 export const addProject = async (project_name) => {
     const options = {
       method: 'POST',
-      body: JSON.stringify({
-        project_name
-      }),
+      body: JSON.stringify(project_name),
       headers: {
-        'content-type': 'application/json'
+        'Content-Type': 'application/json'
       }
     };
-    const response = await fetch(`${baseUrl}/projects`, options);
-    if (!response.ok && response.status !== 422) {
-      throw Error('Unable to add project.')
-    };
-    const id = await response.json();
-    return id;
+    const response = await fetch(`${baseUrl}/projects`, options)
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const updateProject = async (update, id) => {
@@ -42,8 +40,11 @@ export const updateProject = async (update, id) => {
       body: JSON.stringify(update)
     };
     const response = await fetch(`${baseUrl}/projects/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const deleteProject = async (id) => {
@@ -54,8 +55,11 @@ export const deleteProject = async (id) => {
       }
     };
     const response = await fetch(`${baseUrl}/projects/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const getAllPalettes = async () => {
@@ -76,19 +80,17 @@ export const getPaletteById = async (id) => {
 export const addPalette = async (palette) => {
     const options = {
       method: 'POST',
-      body: JSON.stringify({
-        palette
-      }),
+      body: JSON.stringify(palette),
       headers: {
-        'content-type': 'application/json'
+        'Content-Type': 'application/json'
       }
     };
-    const response = await fetch(`${baseUrl}/palettes`, options);
-    if (!response.ok && response.status !== 422) {
-      throw Error('Unable to add palette.')
-    };
-    const addedPalette = await response.json();
-    return addedPalette;
+    const response = await fetch(`${baseUrl}/palettes`, options)
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const updatePalette = async (update, id) => {
@@ -100,8 +102,11 @@ export const updatePalette = async (update, id) => {
       body: JSON.stringify(update)
     };
     const response = await fetch(`${baseUrl}/palettes/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
 
 export const deletePalette = async (id) => {
@@ -112,8 +117,11 @@ export const deletePalette = async (id) => {
       }
     };
     const response = await fetch(`${baseUrl}/palettes/${id}`, options);
-    const data = response.json();
-    return data;
+    try {
+      return response.json()
+    } catch {
+      throw Error(response.statusText)
+    }
 };
   
   
