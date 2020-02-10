@@ -33,7 +33,9 @@ const ColorContainer = () => {
     }
 
     const generateRandomColor = () => {
-
+        // logic to know if the colorCard isLocked, dont generate random color
+        // access the array of colors, if !== isLocked generate color
+        return Math.floor(Math.random()*16777215).toString(16)
     }
 
     const currentPalette = () => {
