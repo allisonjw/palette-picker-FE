@@ -231,7 +231,60 @@ describe('apiCalls.js', () => {
     });
     
     describe('addProject', () => {
+        let mockResponse = {
+            palette_name: "Modern",
+            color_1: "#AE2D49",
+            color_2: "#21354A",
+            color_3: "#4EB47A",
+            color_4: "#C9CFC8",
+            color_5: "#F6C876"
+          };
+      
+          beforeEach(() => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok:true,
+                json: () => Promise.resolve(mockResponse)
+              })
+            });
+          });
+      
+          it('should fetch with the correct arguments', () => {
+            const mockUrl = 'https://palette-of-colors-picker.herokuapp.com/api/v1/projects'
+            const mockProject = {
+                project_name: "Art Project"
+            };
 
+            const expected = [mockUrl, {
+              method: 'POST',
+              body: JSON.stringify(mockProject),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            }]
+      
+            addProject(mockProject)
+            expect(window.fetch).toHaveBeenCalledWith(...expected)
+          });
+      
+          it('should post a project (HAPPY)', () => {
+            const mockUrl = 'https://project-of-colors-picker.herokuapp.com/api/v1/projects'
+
+            addProject(mockUrl)
+            .then(results => expect(results).toEqual(mockResponse))
+          });
+      
+          it('should return an error (SAD)', () => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok: false,
+                statusText: "Unable to add project."
+              })
+            });
+      
+            const mockUrl = 'https://project-of-colors-picker.herokuapp.com/api/v1/projects'
+            expect(addProject(mockUrl)).rejects.toEqual(Error("Unable to add project."))
+          });
     });
 
     describe('deleteProject', () => {
