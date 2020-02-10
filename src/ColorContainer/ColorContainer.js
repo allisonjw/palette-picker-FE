@@ -24,8 +24,8 @@ const ColorContainer = () => {
       fetchPalettes();
     }, []);
 
-    const toggleLock = () => {
-        // dispatch(lockColor())
+    const toggleLock = (isLocked) => {
+        dispatch(lockColor(false))
     }
 
     const deleteColorPalette = (id) => {

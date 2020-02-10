@@ -1,11 +1,12 @@
 import React from 'react';
 import './ColorCard.scss';
 
-const ColorCard = ({ currentPalette}) => {
-   
+const ColorCard = ({ toggleLock, currentPalette}) => {
+   console.log(toggleLock)
     return(
         <section className="section_colorCards">
             <div>
+              <img className="colorCard_image-lock" src={require("../images/open-lock.png")}/>
               <h3>#{currentPalette}</h3>
             </div>
             {/* <div>
