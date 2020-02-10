@@ -1,0 +1,28 @@
+%form_styling {
+    height: 40px;
+    font-size: 1.3em;
+    box-shadow: inset 1px 1px 2px 1px black;
+    padding-left: 1.5%;
+    outline: none;
+    margin-left: 10px;
+}
+
+.project_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.project_input, 
+.project_btn {
+    @extend %form_styling;
+}
+
+.project_input {
+
+}
+
+.project_btn {
+
+}

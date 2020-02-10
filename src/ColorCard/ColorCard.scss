@@ -1,4 +1,22 @@
+.section_colorCards {
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 1%;
+    align-items: center;
+}
+
 .colorCard_image-lock {
-    width: 7%;
+    width: 20%;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all .4s ease-in-out;
+      }
+}
+
+.colorCard_hex {
+    text-transform: uppercase;
 }
 

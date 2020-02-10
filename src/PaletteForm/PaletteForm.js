@@ -10,10 +10,10 @@ class PaletteForm extends Component {
     }
     render() {
         return(
-            <form>
-                <select>project # 1</select>
-                <input/>
-                <button>Submit Palette</button>
+            <form className="palette_form">
+                <select className="palette_select">project # 1</select>
+                <input className="palette_input"/>
+                <button className="palette_btn">Submit Palette</button>
             </form>
         )
     }

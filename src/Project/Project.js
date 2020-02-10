@@ -7,9 +7,9 @@ const Project = ({projects}) => {
         return project.project_name
     })
     return(
-        <div>
+        <section className="section_projects">
             {displayNames}
-        </div>
+        </section>
     )
 }
 

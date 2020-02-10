@@ -10,9 +10,9 @@ class ProjectForm extends Component {
     }
     render() {
         return(
-            <form>
-                <input/>
-                <button>Submit Project</button>
+            <form className="project_form">
+                <input className="project_input"/>
+                <button className="project_btn">Submit Project</button>
             </form>
         )
     }

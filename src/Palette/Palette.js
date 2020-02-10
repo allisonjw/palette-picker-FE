@@ -3,9 +3,10 @@ import './Palette.scss';
 
 const Palette = () => {
     return (
-        <div>
-            <h1>PALETTES</h1>
-        </div>
+        <section className="section_palettes">
+            <h3>Palette Name</h3>
+            <img src=""/>
+        </section>
     )
 }
 
