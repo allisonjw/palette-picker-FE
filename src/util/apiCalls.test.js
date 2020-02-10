@@ -359,22 +359,23 @@ describe('apiCalls.js', () => {
                 ok: true
               })
             })
-          });
+        });
 
-          it('should fetch with the correct URL and options', () => {
-            const mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${1}`;
-            const update = { color_1: '#D6B28D' };
-            const options = {
-              method: 'PATCH',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(update)
-            };
-            updateProject(update, 1);
-            expect(window.fetch).toHaveBeenCalledWith(mockUrl, options);
-          });
-        });  
+        it('should fetch with the correct URL and options', () => {
+          const mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${1}`;
+          const update = { color_1: '#D6B28D' };
+          const options = {
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(update)
+          };
+
+        updateProject(update, 1);
+        expect(window.fetch).toHaveBeenCalledWith(mockUrl, options);
+        });
+    });  
 
     describe('updatePalette', () => {
         beforeEach(() => {
@@ -383,8 +384,22 @@ describe('apiCalls.js', () => {
                 ok: true
               })
             })
-          });
+        });
 
+        it('should fetch with the correct URL and options', () => {
+          const mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/palettes/${1}`;
+          const update = { color_1: '#D6B28D' };
+          const options = {
+            method: 'PATCH',
+            headers: {
+             'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(update)
+          };
+
+          updatePalette(update, 1);
+          expect(window.fetch).toHaveBeenCalledWith(mockUrl, options);
+        });  
     });
 
 });    
