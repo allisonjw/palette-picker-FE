@@ -1,7 +1,6 @@
 export const paletteReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_PALETTES':
-            console.log('action palettes', action.palettes)
             return action.palettes
         case 'ADD_PALETTE':
             return [...state, action.palette]

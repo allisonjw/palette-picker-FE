@@ -1,12 +1,14 @@
-//import my project form
 //import color card???
 import React from 'react';
 import './Project.scss'
 
-const Project = () => {
+const Project = ({projects}) => {
+    const displayNames = projects.map(project => {
+        return project.project_name
+    })
     return(
         <div>
-            //whatever component goes in here
+            {displayNames}
         </div>
     )
 }
