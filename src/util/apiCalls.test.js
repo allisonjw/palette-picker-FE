@@ -232,12 +232,7 @@ describe('apiCalls.js', () => {
     
     describe('addProject', () => {
         let mockResponse = {
-            palette_name: "Modern",
-            color_1: "#AE2D49",
-            color_2: "#21354A",
-            color_3: "#4EB47A",
-            color_4: "#C9CFC8",
-            color_5: "#F6C876"
+            project_name: "Art Project"
           };
       
           beforeEach(() => {
@@ -288,8 +283,6 @@ describe('apiCalls.js', () => {
     });
 
     describe('deleteProject', () => {
-        let mockResponse = "Project with an id of 5 successfully deleted."
-
         beforeEach(() => {
           window.fetch = jest.fn().mockImplementation(() => {
             return Promise.resolve({
@@ -298,7 +291,7 @@ describe('apiCalls.js', () => {
           })
         });
 
-        it('should be called with the correct arguments', () => {
+        it('should fetch with the correct arguments', () => {
           const id = 1
           const expected = [`https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${1}`, {
             method: 'DELETE',
@@ -325,8 +318,6 @@ describe('apiCalls.js', () => {
     });
 
     describe('deletePalette', () => {
-        let mockResponse = "Palette with an id of 5 successfully deleted."
-
         beforeEach(() => {
           window.fetch = jest.fn().mockImplementation(() => {
             return Promise.resolve({
@@ -335,7 +326,7 @@ describe('apiCalls.js', () => {
           })
         });
 
-        it('should be called with the correct arguments', () => {
+        it('should fetch with the correct arguments', () => {
           const id = 1
           const expected = [`https://palette-of-colors-picker.herokuapp.com/api/v1/palettes/${1}`, {
             method: 'DELETE',
@@ -362,10 +353,37 @@ describe('apiCalls.js', () => {
     });
 
     describe('updateProject', () => {
+        beforeEach(() => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok: true
+              })
+            })
+          });
 
-    });
+          it('should fetch with the correct URL and options', () => {
+            const mockUrl = `https://palette-of-colors-picker.herokuapp.com/api/v1/projects/${1}`;
+            const update = { color_1: '#D6B28D' };
+            const options = {
+              method: 'PATCH',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(update)
+            };
+            updateProject(update, 1);
+            expect(window.fetch).toHaveBeenCalledWith(mockUrl, options);
+          });
+        });  
 
     describe('updatePalette', () => {
+        beforeEach(() => {
+            window.fetch = jest.fn().mockImplementation(() => {
+              return Promise.resolve({
+                ok: true
+              })
+            })
+          });
 
     });
 
