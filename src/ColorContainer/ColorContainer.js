@@ -50,11 +50,11 @@ const ColorContainer = () => {
     return(
         <>
         <section className="section_colorContainer">
-            <ColorCard color={palette[0].color} locked={palette[0].locked} lockPaletteColor={lockPaletteColor}/>
-            <ColorCard color={palette[1].color} locked={palette[1].locked} lockPaletteColor={lockPaletteColor}/>
-            <ColorCard color={palette[2].color} locked={palette[2].locked} lockPaletteColor={lockPaletteColor}/>
-            <ColorCard color={palette[3].color} locked={palette[3].locked} lockPaletteColor={lockPaletteColor}/>
-            <ColorCard color={palette[4].color} locked={palette[4].locked} lockPaletteColor={lockPaletteColor}/>
+            <ColorCard color={palette[0].color} palette={palette} locked={palette[0].locked} lockPaletteColor={lockPaletteColor}/>
+            <ColorCard color={palette[1].color} palette={palette} locked={palette[1].locked} lockPaletteColor={lockPaletteColor}/>
+            <ColorCard color={palette[2].color} palette={palette} locked={palette[2].locked} lockPaletteColor={lockPaletteColor}/>
+            <ColorCard color={palette[3].color} palette={palette} locked={palette[3].locked} lockPaletteColor={lockPaletteColor}/>
+            <ColorCard color={palette[4].color} palette={palette} locked={palette[4].locked} lockPaletteColor={lockPaletteColor}/>
         </section>
         <section className="generate_btn-section">   
         <button
