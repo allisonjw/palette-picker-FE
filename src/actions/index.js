@@ -18,7 +18,7 @@ export const addPalette = (id, palette_name, color_1, color_2, color_3, color_4,
     }
 });
 
-export const deleteColorPalette = (id) => ({
+export const deletePalette = (id) => ({
     type: 'DELETE_PALETTE',
     id
 });
