@@ -3,7 +3,7 @@ export const setPalettes = (palettes) => ({
     palettes
 });
 
-export const addPalette = (id, palette_name, color_1, color_2, color_3, color_4, color_5, project_id) => ({
+export const addColorPalette = (id, palette_name, color_1, color_2, color_3, color_4, color_5, project_id) => ({
     type: 'ADD_PALETTE',
     palette: {
         id,
