@@ -22,11 +22,6 @@ export const deleteColorPalette = (id) => ({
     id
 });
 
-export const lockColor = (isLocked) => ({
-    type: 'LOCK_COLOR',
-    isLocked
-});
-
 export const setProjects = (projects) => ({
     type: 'SET_PROJECTS',
     projects
