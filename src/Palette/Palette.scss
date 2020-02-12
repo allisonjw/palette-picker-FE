@@ -1,7 +1,7 @@
 .section_palettes {
-    background-color: cornsilk;
+    background-color: white;
     display: flex;
-    width: 300px;
+    width: 285px;
     justify-content: space-evenly;
     border: solid 1px rgb(187, 187, 187);
     padding: 2px 10px 2px 5px;
@@ -16,7 +16,12 @@
     line-height: 30px;
 }
 
-.deleteBtn {
+.palette_delete-btn {
     height: 25px;
     margin: 2px;
+}
+
+.palette__colors {
+    height: 30px;
+    width: 30px;
 }
