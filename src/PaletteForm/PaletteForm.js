@@ -36,11 +36,11 @@ const PaletteForm = ({initialPalette}) => {
     return(
         <>
         <form className="palette_form"> 
-            <select className="palette_select" value={currentProject}>
-                <option value="">Select a Project</option>
+            <select className="palette_select" name={currentProject}>
+                <option selected value="">Select a Project</option>
               {displayProjects.map(project => {
                   return (
-                    <option className="palette_option" id={project.id} value={project.id}>
+                    <option className="palette_option" id={project.id} value={project.project_name}>
                         {project.project_name}
                     </option>
                   )
