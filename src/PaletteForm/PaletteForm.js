@@ -17,9 +17,9 @@ const PaletteForm = ({initialPalette}) => {
     console.log('projects', displayProjects)
     const handleSubmit = async (e) => {
         e.preventDefault();
-          if (!paletteName && !displayProjects.project_name) {
-                  setErrorMsg = ('please select a project and create a new palette name')
-              } else {
+        //   if (!paletteName && !displayProjects.project_name) {
+        //           setErrorMsg = ('please select a project and create a new palette name')
+        //   } else {
         const newPalette = { 
             palette_name: `${paletteName}`, 
             color_1: `#${initialPalette[0].color}`, 
@@ -31,7 +31,7 @@ const PaletteForm = ({initialPalette}) => {
             addPalette(newPalette)
             dispatch(addColorPalette(newPalette));
             setPaletteName('')
-          }
+        //   }
     }
 
     return(

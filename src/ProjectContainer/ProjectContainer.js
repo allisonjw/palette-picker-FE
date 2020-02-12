@@ -25,14 +25,14 @@ export const ProjectContainer = () => {
       }, []);
 
       return(
-        <>
+        <div className="project-container-main">
           <section className="section_projectContainer-project">
               <Project projects={projects}/>
           </section>
           <section className="section_projectContainer-palette" >   
               <Palette />
           </section>
-          </>
+          </div>
       )
     
     
