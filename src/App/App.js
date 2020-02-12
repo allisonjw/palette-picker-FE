@@ -3,7 +3,7 @@ import './App.scss';
 import Header from '../Header/Header';
 import ProjectContainer from '../ProjectContainer/ProjectContainer';
 import ColorContainer from '../ColorContainer/ColorContainer';
-import PaletteForm from '../PaletteForm/PaletteForm';
+// import PaletteForm from '../PaletteForm/PaletteForm';
 import ProjectForm from '../ProjectForm/ProjectForm';
 
 
@@ -13,7 +13,7 @@ const App = () => {
     <div className="App">
         <Header />
         <ColorContainer/>
-        <PaletteForm />
+        {/* <PaletteForm /> */}
         <ProjectForm />
         <ProjectContainer/>
     </div>

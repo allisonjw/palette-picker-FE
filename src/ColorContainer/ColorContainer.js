@@ -1,6 +1,7 @@
 import ColorCard from '../ColorCard/ColorCard';
 import React, { useState } from 'react';
 import './ColorContainer.scss';
+import PaletteForm from '../PaletteForm/PaletteForm';
 
 const ColorContainer = () => {
     const [initialPalette, setInitialPalette] = useState([
@@ -54,6 +55,7 @@ const ColorContainer = () => {
             onClick={() => changeColor()}>GENERATE COLORS
         </button>
         </section>
+        <PaletteForm initialPalette={initialPalette} />
         </>
     )
 }
