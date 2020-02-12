@@ -28,13 +28,9 @@ const ColorContainer = () => {
             }
             return color;
           });
-          console.log('lockcolor:', updatedColors)
           setInitialPalette(updatedColors)
       }
-      
-    //   const generateRandomColor = () => {
-    //       return Math.floor(Math.random()*16777215).toString(16);
-    //   }
+  
 
       const displayColorCard = initialPalette.map(palette => {
         return (
@@ -42,47 +38,14 @@ const ColorContainer = () => {
               {...palette}
               key={palette.palette_id}
               lockColor={lockColor}
-            //   changeColor={changeColor}
             />
         )
       })
-
-      
+ 
     return(
         <>
         <section className="section_colorContainer">
             {displayColorCard}
-            {/* <ColorCard 
-                // onClick={reply_click(id)}
-                color={initialPalette[0].color} 
-                initialPalette={initialPalette} 
-                locked={initialPalette[0].locked} 
-                id={initialPalette[0].palette_id}
-                lockColor={lockColor}/>
-            <ColorCard 
-                color={initialPalette[1].color} 
-                initialPalette={initialPalette} 
-                locked={initialPalette[1].locked}
-                id={initialPalette[1].palette_id} 
-                lockColor={lockColor}/>
-            <ColorCard 
-                color={initialPalette[2].color} 
-                initialPalette={initialPalette} 
-                locked={initialPalette[2].locked} 
-                id={initialPalette[2].palette_id}
-                lockColor={lockColor}/>
-            <ColorCard 
-                color={initialPalette[3].color} 
-                initialPalette={initialPalette} 
-                locked={initialPalette[3].locked} 
-                id={initialPalette[3].palette_id}
-                lockColor={lockColor}/>
-            <ColorCard 
-                color={initialPalette[4].color} 
-                initialPalette={initialPalette} 
-                locked={initialPalette[4].locked}
-                id={initialPalette[4].palette_id} 
-                lockColor={lockColor}/> */}
         </section>
         <section className="generate_btn-section">   
         <button
