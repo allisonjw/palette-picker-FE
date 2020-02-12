@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setProjects, deleteProject } from '../actions';
 import { getAllProjects } from '../util/apiCalls';
 import './ProjectContainer.scss';
-import Palette from '../Palette/Palette';
 
 export const ProjectContainer = () => {
     const dispatch = useDispatch();
@@ -25,14 +24,11 @@ export const ProjectContainer = () => {
       }, []);
 
       return(
-        <>
+        <div className="project-container-main">
           <section className="section_projectContainer-project">
               <Project projects={projects}/>
           </section>
-          <section className="section_projectContainer-palette" >   
-              <Palette />
-          </section>
-          </>
+          </div>
       )
     
     

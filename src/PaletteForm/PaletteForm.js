@@ -10,44 +10,42 @@ import Project from '../Project/Project';
 const PaletteForm = ({initialPalette}) => {
     const dispatch = useDispatch();
     const [paletteName, setPaletteName] = useState('');
-    const [currentProject, setCurrentProject] = useState('');
+    const [currentProject, setCurrentProject] = useState('1');
     const [errorMsg, setErrorMsg] = useState('');
     const displayProjects = useSelector(state => state.projects)
 
-    console.log('projects', displayProjects)
     const handleSubmit = async (e) => {
         e.preventDefault();
-        //   if (!paletteName && !Project.name) {
-            //       setErrorMsg = ('please select a project and create a new palette name')
-            //   } else {
-                
-      const newPalette = { 
-        palette_name: `${paletteName}`, 
-        color_1: `#${initialPalette[0].color}`, 
-        color_2: `#${initialPalette[1].color}`, 
-        color_3: `#${initialPalette[2].color}`, 
-        color_4: `#${initialPalette[3].color}`, 
-        color_5: `#${initialPalette[4].color}`,};
-        // project_id: '' };
+          if (!paletteName && !displayProjects.project_name) {
+            setErrorMsg = ('please select a project and create a new palette name')
+          } else {
+        const newPalette = { 
+            palette_name: `${paletteName}`, 
+            color_1: `#${initialPalette[0].color}`, 
+            color_2: `#${initialPalette[1].color}`, 
+            color_3: `#${initialPalette[2].color}`, 
+            color_4: `#${initialPalette[3].color}`, 
+            color_5: `#${initialPalette[4].color}`,};
+            // project_id: '' };
         addPalette(newPalette)
         dispatch(addColorPalette(newPalette));
         setPaletteName('')
-    // }
-
-  }
+          }
+    };
 
     return(
         <>
         <form className="palette_form"> 
-            <select className="palette_select">palette # 1</select>
+            <select className="palette_select" name={currentProject}>
+                <option selected value="">Select a Project</option>
               {displayProjects.map(project => {
-                  {console.log(project.project_name)}
                   return (
-                    <option className="palette_option" git sid={project.id} value={project.id}>
+                    <option className="palette_option" id={project.id} value={project.project_name}>
                         {project.project_name}
                     </option>
                   )
               })}
+            </select>
             <input 
                 className="palette_input" 
                 value={paletteName}
