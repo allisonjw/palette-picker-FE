@@ -1,13 +1,9 @@
-.section_projects {
-    background-color: darkkhaki;
-    display: flex;
-    font-size: 1.3em;
-    margin: 10px;
-}
-  
 .project_name {
-    display: inline-block;
-    margin: 5px;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 0px 7px #000000d6;
+  display: inline-block;
+  margin: 5px;
 }
 
 .deleteBtn {

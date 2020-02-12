@@ -1,22 +1,11 @@
 .project-container-main {
-    // height: 50vh;
-    width: 94%;
-    // overflow: hidden;
-    background-color: pink;
     margin: 15px auto;
     column-count: 4;
     column-gap: 1em;
 }
 
-// .section_projectContainer-project,
-// .section_projectContainer-palette {
-//     display: flex;
-//     // flex-direction: row;
-//     height: 100px;
-// }
-
 .section_projectContainer-project {
-    background-color: chocolate;
+    background-color: cadetblue;
     display: inline-block;
     margin: 2em 1em;
     width: 300px;
@@ -26,6 +15,3 @@
     padding: 5px 0px 0px 0px;
 }
 
-.section_projectContainer-palette {
-    background-color: cornflowerblue;
-}

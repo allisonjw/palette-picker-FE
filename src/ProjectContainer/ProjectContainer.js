@@ -1,14 +1,16 @@
 import Project from '../Project/Project';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setProjects, deleteProject } from '../actions';
-import { getAllProjects } from '../util/apiCalls';
+import { setProjects, setPalettes, deleteProject } from '../actions';
+import { getAllProjects, getAllPalettes } from '../util/apiCalls';
 import './ProjectContainer.scss';
 
 export const ProjectContainer = () => {
     const dispatch = useDispatch();
     const [project, setAllProjects] = useState([]);
+    const [palette, setAllPalettes] = useState([]);
     const projects = useSelector(state => state.projects)
+    const palettes = useSelector(state => state.palettes)
 
         const fetchProjects = async () => {
           try {
@@ -19,8 +21,20 @@ export const ProjectContainer = () => {
               console.log(error);
           }
         };
+
+        const fetchPalettes = async () => {
+          try {
+            const response = await getAllPalettes();
+            setAllPalettes(response.palettes);
+            dispatch(setPalettes(response));
+          } catch(error) {
+              console.log(error);
+          }
+        };
+
       useEffect(() => {
         fetchProjects();
+        fetchPalettes();
       }, []);
 
       return(
@@ -29,9 +43,7 @@ export const ProjectContainer = () => {
               <Project projects={projects}/>
           </section>
           </div>
-      )
-    
-    
-}
+      ) 
+};
 
 export default ProjectContainer;
