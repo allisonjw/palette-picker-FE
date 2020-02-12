@@ -10,14 +10,14 @@ const Palette = ({ palette_name, color_1, color_2, color_3, color_4, color_5 }) 
         return (
           <div
             className="palette__colors"
-            style={{ backgroundColor: `#${color}` }}
+            style={{ backgroundColor: `${color}` }}
           ></div>
         );
     });
 
     return (
         <section className="section_palettes">
-            <h3 className="palette_name">{}</h3>
+            <h3 className="palette_name">{palette_name}</h3>
                 {displayColors}
             <img
                 className="palette_delete-btn"
