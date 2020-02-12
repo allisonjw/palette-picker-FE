@@ -73,12 +73,12 @@ export const getPaletteById = async (id) => {
     return data;
 };
 
-export const addPalette = async (palette) => {
+export const addPalette = async (newPalette) => {
     const options = {
       method: 'POST',
-      body: JSON.stringify({
-        palette
-      }),
+      body: JSON.stringify(
+        newPalette
+      ),
       headers: {
         'content-type': 'application/json'
       }
