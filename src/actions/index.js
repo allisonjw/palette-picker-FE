@@ -3,18 +3,9 @@ export const setPalettes = (palettes) => ({
     palettes
 });
 
-export const addColorPalette = (palette_name, color_1, color_2, color_3, color_4, color_5, project_id) => ({
+export const addColorPalette = (palette) => ({
     type: 'ADD_PALETTE',
-    palette: {
-        palette_name,
-        color_1,
-        color_2,
-        color_3,
-        color_4,
-        color_5,
-        project_id
-
-    }
+    palette
 });
 
 export const deleteColorPalette = (id) => ({
@@ -22,22 +13,14 @@ export const deleteColorPalette = (id) => ({
     id
 });
 
-export const lockColor = (isLocked) => ({
-    type: 'LOCK_COLOR',
-    isLocked
-});
-
 export const setProjects = (projects) => ({
     type: 'SET_PROJECTS',
     projects
 });
 
-export const addProject = (project_name, id) => ({
+export const addProject = (project) => ({
     type: 'ADD_PROJECT',
-    project: {
-        project_name,
-        id
-    }
+    project
 });
 
 export const deleteProject = (id) => ({
