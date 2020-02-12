@@ -3,5 +3,14 @@
     display: flex;
     font-size: 1.3em;
     margin: 10px;
-    // flex-direction: row;
+}
+  
+.project_name {
+    display: inline-block;
+    margin: 5px;
+}
+
+.deleteBtn {
+  height: 25px;
+  margin: 2px;
 }
