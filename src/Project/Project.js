@@ -5,6 +5,10 @@ import trashBin from '../images/rubbish.png';
 import Palette from '../Palette/Palette';
 
 const Project = ({projects}) => {
+
+  // add removeProject or pass as props from ProjectContainer
+  // if created here import apicall, usedispatch and action
+
    const palettes = useSelector(state => state.palettes)
 
     const displayPalettes = palettes
@@ -18,18 +22,18 @@ const Project = ({projects}) => {
     });
     
     return(
-        <div>
-        <section className="section_projects">
+      <>
+        {/* <section className="section_projects"> */}
             <h3 className="project_name">{displayNames}</h3>
         {displayPalettes}
-        </section>
+        {/* </section> */}
           <img
             className='deleteBtn'
             src={trashBin}
             alt='delete button'
             // onClick={() => removeProject(project_id)}
           />
-        </div>
+      </>
     )
 };
 

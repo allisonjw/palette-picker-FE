@@ -3,7 +3,8 @@ import './Palette.scss';
 import trashBin from '../images/rubbish.png'
 
 const Palette = ({ palette_name, color_1, color_2, color_3, color_4, color_5 }) => {
-
+  // add removePalette or pass down from ProjectContainer?
+  // if created here import apicall, usedispatch and action
     const colors =[color_1, color_2, color_3, color_4, color_5];
 
     const displayColors = colors.map(color => {
