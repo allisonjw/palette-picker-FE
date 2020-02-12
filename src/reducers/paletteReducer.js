@@ -6,8 +6,6 @@ export const paletteReducer = (state = [], action) => {
             return [...state, action.palette]
         case 'DELETE_PALETTE':
             return [...state].filter(palette => palette.id !== action.id)
-        case 'LOCK_COLOR':
-            return action.isLocked
         default : 
             return state
     }
