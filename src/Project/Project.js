@@ -23,16 +23,14 @@ const Project = ({projects}) => {
     
     return(
       <>
-        {/* <section className="section_projects"> */}
-            <h3 className="project_name">{displayNames}</h3>
-        {displayPalettes}
-        {/* </section> */}
-          <img
+        <h3 className="project_name">{displayNames}</h3>
+          {displayPalettes}
+        <img
             className='deleteBtn'
             src={trashBin}
             alt='delete button'
             // onClick={() => removeProject(project_id)}
-          />
+        />
       </>
     )
 };
