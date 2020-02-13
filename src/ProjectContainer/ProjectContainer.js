@@ -44,7 +44,11 @@ export const ProjectContainer = () => {
        return palette.project_id === project.id
      })
      return(
-       <Project name={project.project_name} id={project.id} palettes={relevantPalettes}/>
+       <Project 
+        name={project.project_name} 
+        key={project.id} 
+        id={project.id} 
+        palettes={relevantPalettes}/>
      )
    })
  }     
