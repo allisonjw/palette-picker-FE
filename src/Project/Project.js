@@ -46,15 +46,14 @@ const Project = ({name, id, palettes}) => {
     } 
     return(
       <section className="project-box">
-      
         <h3 className="project_name">{name}</h3>
-            {displayPalettes()}
         <img
             className='deleteBtn'
             src={trashBin}
             alt='delete button'
             onClick={() => removeProject(id)}
-        ></img>
+            ></img>
+            {displayPalettes()}
       </section>
     )
 };

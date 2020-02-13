@@ -12,11 +12,11 @@
 }
 
 .generate_colors-btn {
-  background-color: black;
+  background-color: cadetblue;
     border-radius: 6px;
     color: white;
     height: 60px;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-family: 'Shadows Into Light', cursive;
     outline: none;
     margin-top: .8%;
@@ -24,6 +24,5 @@
         cursor: pointer;
         transform: scale(1.1);
         transition: all .4s ease-in-out;
-      };
-    
+      }; 
 }

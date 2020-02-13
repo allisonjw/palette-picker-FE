@@ -8,13 +8,20 @@
 }
 
 .project-box {
-  background-color: black;
+  background-color: cadetblue;
   height: 148px;
-  margin-bottom: 10px;
+  margin: 12px 10px 12px 10px;
   width: 300px;
-
+  box-shadow: 8px 7px 12px 0px black;;
+  border-radius: 2px;
 }
+
 .deleteBtn {
   height: 25px;
   margin: 2px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all .4s ease-in-out;
+  }
 }
