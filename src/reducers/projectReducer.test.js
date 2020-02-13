@@ -60,17 +60,31 @@ describe('projectReducer', () => {
         expect(result).toEqual(expected);    
     });
 
-    it.skip('should return the correct state with action type REMOVE_PROJECT', () => {
-        const action = [{
-
+    it('should return the correct state with action type REMOVE_PROJECT', () => {
+        const initialState = [{
+            "id": 9,
+            "project_name": "Jessie's House",
+            "user_id": 5
+        },
+        {
+            "id": 10,
+            "project_name": "Dream Bath",
+            "user_id": 5
         }];
 
         const expected = [{
-
+            "id": 9,
+            "project_name": "Jessie's House",
+            "user_id": 5
         }];
+        const id = 10;
+    
+        const action = {
+          type: 'DELETE_PROJECT',
+          id
+        };
 
-        const result = projectReducer([], action);
+        const result = projectReducer(initialState, action);
         expect(result).toEqual(expected);  
     });
-
 });    
