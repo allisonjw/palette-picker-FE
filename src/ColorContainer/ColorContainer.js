@@ -5,11 +5,11 @@ import PaletteForm from '../PaletteForm/PaletteForm';
 
 const ColorContainer = () => {
     const [initialPalette, setInitialPalette] = useState([
-        {palette_id: 1, color: '', locked: false},
-        {palette_id: 2, color: '', locked: false},
-        {palette_id: 3, color: '', locked: false},
-        {palette_id: 4, color: '', locked: false},
-        {palette_id: 5, color: '', locked: false}
+        {palette_id: 1, project_id: '', color: '', locked: false},
+        {palette_id: 2, project_id: '', color: '', locked: false},
+        {palette_id: 3, project_id: '', color: '', locked: false},
+        {palette_id: 4, project_id: '', color: '', locked: false},
+        {palette_id: 5, project_id: '', color: '', locked: false}
     ]);     
 
       const changeColor = () => {
