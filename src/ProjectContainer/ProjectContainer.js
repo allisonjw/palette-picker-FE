@@ -55,7 +55,6 @@ export const ProjectContainer = () => {
       return(
         <div className="project-container-main">
           <section className="section_projectContainer-project">
-              {/* <Project projects={projects}/> */}
               {generateProject()}
           </section>
           </div>

@@ -14,11 +14,12 @@
   width: 300px;
   box-shadow: 8px 7px 12px 0px black;;
   border-radius: 2px;
+  min-height: 183px;
 }
 
 .deleteBtn {
   height: 25px;
-  margin: 2px;
+  margin: -4px auto;;
   &:hover {
     cursor: pointer;
     transform: scale(1.1);

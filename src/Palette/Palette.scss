@@ -1,12 +1,9 @@
 .section_palettes {
     background-color: white;
-
     display: flex;
-    width: 283px;
     align-items: center;
-    justify-content: space-evenly;
     border: solid 1px rgb(187, 187, 187);
-    padding: 2px 10px 2px 5px;
+    padding-left: 2px;
     .section_palettes:last-child {
     border-radius: 0 0 15px 15px;
     }

@@ -9,27 +9,7 @@ import Palette from '../Palette/Palette';
 const Project = ({name, id, palettes}) => {
     const dispatch = useDispatch();
 
-    console.log('pro', id)
-
-    // const remv = async (e) => {
-    //   e.preventDefault();
-    //   const newProject = { 
-    //       project_name: newProjectName,  
-    //   };
-    //   addProject(newProject)
-    //   dispatch(addNewProject(newProject));
-    //   setNewProjectName('')
-
-    // const removeProject = async () => {
-    //   try {
-    //     const newProjects = projects.filter(prj => prj.id !== project.id);
-    //     setProjects(newProjects);
-    //     await deleteProject(project.id);
-    //   }
-    //   catch (error) {
-    //     console.log(error);
-    //   }
-    // };
+    // console.log('pro', id)
 
     const removeProject = async () => {
       const body = {

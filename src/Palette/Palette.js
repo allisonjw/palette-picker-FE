@@ -7,7 +7,7 @@ import { deleteColorPalette } from '../actions';
 
 const Palette = ({palette_name, id, color_1, color_2, color_3, color_4, color_5}) => {
     const dispatch = useDispatch()
-    console.log('palette', id)
+ 
     const getColors = () => {
         const colorArray = [color_1, color_2, color_3, color_4, color_5]
         const makeColors = colorArray.map(color => {
