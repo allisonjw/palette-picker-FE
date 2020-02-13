@@ -23,7 +23,7 @@ export const addNewProject = (project) => ({
     project
 });
 
-export const deleteProject = (id) => ({
+export const deleteSelectedProject = (id) => ({
     type: 'DELETE_PROJECT',
     id
 });
