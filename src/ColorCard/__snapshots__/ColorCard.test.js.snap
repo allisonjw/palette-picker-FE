@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorCard should match the snapshot 1`] = `
+<section
+  className="section_colorCards"
+  style={
+    Object {
+      "backgroundColor": "#undefined",
+    }
+  }
+>
+  <img
+    alt="lock"
+    className="colorCard_image-lock"
+    onClick={[Function]}
+    src="open-lock.png"
+  />
+  <h3
+    className="colorCard_hex"
+  >
+    #
+  </h3>
+</section>
+`;

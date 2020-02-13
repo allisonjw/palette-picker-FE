@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorContainer should match the snapshot 1`] = `
+<Fragment>
+  <section
+    className="section_colorContainer"
+  >
+    <ColorCard
+      color=""
+      key="1"
+      lockColor={[Function]}
+      locked={false}
+      palette_id={1}
+    />
+    <ColorCard
+      color=""
+      key="2"
+      lockColor={[Function]}
+      locked={false}
+      palette_id={2}
+    />
+    <ColorCard
+      color=""
+      key="3"
+      lockColor={[Function]}
+      locked={false}
+      palette_id={3}
+    />
+    <ColorCard
+      color=""
+      key="4"
+      lockColor={[Function]}
+      locked={false}
+      palette_id={4}
+    />
+    <ColorCard
+      color=""
+      key="5"
+      lockColor={[Function]}
+      locked={false}
+      palette_id={5}
+    />
+  </section>
+  <section
+    className="generate_btn-section"
+  >
+    <button
+      className="generate_colors-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      GENERATE COLORS
+    </button>
+  </section>
+  <PaletteForm
+    initialPalette={
+      Array [
+        Object {
+          "color": "",
+          "locked": false,
+          "palette_id": 1,
+        },
+        Object {
+          "color": "",
+          "locked": false,
+          "palette_id": 2,
+        },
+        Object {
+          "color": "",
+          "locked": false,
+          "palette_id": 3,
+        },
+        Object {
+          "color": "",
+          "locked": false,
+          "palette_id": 4,
+        },
+        Object {
+          "color": "",
+          "locked": false,
+          "palette_id": 5,
+        },
+      ]
+    }
+  />
+</Fragment>
+`;

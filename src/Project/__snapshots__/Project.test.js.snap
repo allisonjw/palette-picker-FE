@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project should match the snapshot 1`] = `
+<div>
+  <section
+    className="section_projects"
+  >
+    <h3
+      className="project_name"
+    >
+      Jessie's House
+      Dream Bath
+      Allison's House
+    </h3>
+  </section>
+  <img
+    alt="delete button"
+    className="deleteBtn"
+    src="rubbish.png"
+  />
+  <Palette />
+</div>
+`;

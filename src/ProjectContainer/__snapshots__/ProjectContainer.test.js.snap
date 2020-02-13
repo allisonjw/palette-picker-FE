@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectContainer should match the snapshot 1`] = `
+<div
+  className="project-container-main"
+>
+  <section
+    className="section_projectContainer-project"
+  >
+    <Project
+      projects={
+        Object {
+          "projects": Array [
+            Object {},
+            Object {},
+          ],
+        }
+      }
+    />
+  </section>
+</div>
+`;
