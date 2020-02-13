@@ -19,13 +19,10 @@ const Palette = ({palette_name, id, color_1, color_2, color_3, color_4, color_5}
         return makeColors
     }
 
-    const removePalette = (id) => {
+    const removePalette = async (id) => {
+        await deletePalette(id);
         dispatch(deleteColorPalette(id));
-        const body = {
-          id: id
-        }
-        deletePalette('palettes', 'DELETE', body);
-    };
+    }
 
     return (
         <section className="section_palettes">
