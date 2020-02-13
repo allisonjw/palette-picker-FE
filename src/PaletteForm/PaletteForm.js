@@ -53,7 +53,6 @@ const PaletteForm = ({initialPalette}) => {
                 onClick={handleSubmit}
                 className="palette_btn">Submit Palette</button>
         </form>
-        {/* <Palette /> */}
         </>
     )
 }

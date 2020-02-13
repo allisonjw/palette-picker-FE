@@ -18,7 +18,7 @@ export const setProjects = (projects) => ({
     projects
 });
 
-export const addProject = (project) => ({
+export const addNewProject = (project) => ({
     type: 'ADD_PROJECT',
     project
 });

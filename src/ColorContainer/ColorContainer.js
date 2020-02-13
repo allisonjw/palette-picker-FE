@@ -32,7 +32,6 @@ const ColorContainer = () => {
           setInitialPalette(updatedColors)
       }
   
-
       const displayColorCard = initialPalette.map(palette => {
         return (
             <ColorCard 
