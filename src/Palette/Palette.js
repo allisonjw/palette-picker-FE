@@ -2,24 +2,23 @@ import React from 'react';
 import './Palette.scss';
 import trashBin from '../images/rubbish.png'
 
-const Palette = ({ palette_name, color_1, color_2, color_3, color_4, color_5 }) => {
-  // add removePalette or pass down from ProjectContainer?
-  // if created here import apicall, usedispatch and action
-    const colors =[color_1, color_2, color_3, color_4, color_5];
+const Palette = ({palette_name, id, color_1, color_2, color_3, color_4, color_5}) => {
 
-    const displayColors = colors.map(color => {
-        return (
-          <div
-            className="palette__colors"
-            style={{ backgroundColor: `${color}` }}
-          ></div>
-        );
-    });
-
+    const getColors = () => {
+        const colorArray = [color_1, color_2, color_3, color_4, color_5]
+        const makeColors = colorArray.map(color => {
+            console.log('COLOR', color)
+            return(
+                <div className="palette__colors" style={{backgroundColor: `${color}`}}>
+                </div>
+            )
+        })
+        return makeColors
+    }
     return (
         <section className="section_palettes">
             <h3 className="palette_name">{palette_name}</h3>
-                {displayColors}
+            {getColors()}
             <img
                 className="palette_delete-btn"
                 src={trashBin}

@@ -37,10 +37,22 @@ export const ProjectContainer = () => {
         fetchPalettes();
       }, []);
 
+
+ const generateProject = () => {
+   return projects.map(project => {
+     const relevantPalettes = palettes.filter(palette => {
+       return palette.project_id === project.id
+     })
+     return(
+       <Project name={project.project_name} id={project.id} palettes={relevantPalettes}/>
+     )
+   })
+ }     
       return(
         <div className="project-container-main">
           <section className="section_projectContainer-project">
-              <Project projects={projects}/>
+              {/* <Project projects={projects}/> */}
+              {generateProject()}
           </section>
           </div>
       ) 
