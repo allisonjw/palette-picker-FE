@@ -1,7 +1,7 @@
 %form_styling {
     height: 40px;
     font-size: 1.3em;
-    box-shadow: inset 1px 1px 2px 1px black;
+    // box-shadow: inset 1px 1px 2px 1px black;
     padding-left: 1.5%;
     outline: none;
     margin-left: 15px;
@@ -12,22 +12,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-
+    height: 200px;
 }
 
 .palette_select,
 .palette_input,
 .palette_btn {
     @extend %form_styling;
-
 }
 
-.palette_select {
-
-}
-
-.palette_input {
+#input_palette {
+    height: 35px;
+    border-radius: 6px;
+    font-family: 'Shadows Into Light', cursive;
 
 }
 
@@ -41,9 +38,21 @@
 
 select {
     width: 100px;
+    background-color: black;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+
 }
 
 .palette_option {
     width: 60px;
     color: white;
+}
+
+.palette_btn {
+    background-color: black;
+    border-radius: 6px;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+
 }

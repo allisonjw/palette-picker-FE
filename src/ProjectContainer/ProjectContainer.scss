@@ -2,16 +2,21 @@
     margin: 15px auto;
     column-count: 4;
     column-gap: 1em;
+    background-color: pink;
+    height: 600px;
 }
 
 .section_projectContainer-project {
-    background-color: cadetblue;
-    display: inline-block;
-    margin: 2em 1em;
-    width: 300px;
-    text-align: left;
-    border-radius: 5px;
-    border: solid 1px gray;
-    padding: 5px 0px 0px 0px;
+    // background-color: cadetblue;
+    display: flex;
+    margin: 20px;
+    // width: 300px;
+    // text-align: left;
+    // border-radius: 5px;
+    // border: solid 1px gray;
+    // padding: 5px 0px 0px 0px;
+    height: 75em;
+    // width: 100%;
+    flex-wrap: wrap;
 }
 
