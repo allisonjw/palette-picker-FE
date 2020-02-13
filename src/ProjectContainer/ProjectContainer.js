@@ -44,14 +44,17 @@ export const ProjectContainer = () => {
        return palette.project_id === project.id
      })
      return(
-       <Project name={project.project_name} id={project.id} palettes={relevantPalettes}/>
+       <Project 
+        name={project.project_name} 
+        key={project.id} 
+        id={project.id} 
+        palettes={relevantPalettes}/>
      )
    })
  }     
       return(
         <div className="project-container-main">
           <section className="section_projectContainer-project">
-              {/* <Project projects={projects}/> */}
               {generateProject()}
           </section>
           </div>

@@ -6,6 +6,7 @@ import './ProjectForm.scss';
 export const ProjectForm = () => {
     const dispatch = useDispatch();
     const [newProjectName, setNewProjectName] = useState('');
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newProject = { 
@@ -15,6 +16,7 @@ export const ProjectForm = () => {
         dispatch(addNewProject(newProject));
         setNewProjectName('')
     };
+    
     return(
         <form className="project_form" onSubmit={(e) => handleSubmit(e)}>
             <input 

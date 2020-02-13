@@ -64,7 +64,7 @@ describe('actions', () => {
             id
         };
 
-    const result = actions.deleteProject(id);
+    const result = actions.deleteSelectedProject(id);
     expect(result).toEqual(expectedAction);
     });
 });    
