@@ -45,6 +45,7 @@ const PaletteForm = ({initialPalette}) => {
               })}
             </select>
             <input 
+                id="input_palette"
                 className="palette_input" 
                 value={paletteName}
                 placeholder="Palette Name"

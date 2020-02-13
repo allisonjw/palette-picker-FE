@@ -18,6 +18,7 @@ export const ProjectForm = () => {
     return(
         <form className="project_form" onSubmit={(e) => handleSubmit(e)}>
             <input 
+                id="input_project"
                 className="project_input"
                 placeholder="Enter Project Name"
                 value={newProjectName}

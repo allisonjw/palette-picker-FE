@@ -12,14 +12,18 @@
 }
 
 .generate_colors-btn {
-    border-radius: 3px;
+  background-color: black;
+    border-radius: 6px;
+    color: white;
     height: 60px;
     font-size: 1.3em;
+    font-family: 'Shadows Into Light', cursive;
     outline: none;
     margin-top: .8%;
       &:hover {
         cursor: pointer;
         transform: scale(1.1);
         transition: all .4s ease-in-out;
-      }
+      };
+    
 }
