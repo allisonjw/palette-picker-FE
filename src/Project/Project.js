@@ -16,7 +16,8 @@ const Project = ({name, id, palettes}) => {
       })
     } 
     return(
-      <>
+      <section className="project-box">
+      
         <h3 className="project_name">{name}</h3>
             {displayPalettes()}
         <img
@@ -25,7 +26,7 @@ const Project = ({name, id, palettes}) => {
             alt='delete button'
             // onClick={() => removeProject(project_id)}
         ></img>
-      </>
+      </section>
     )
 };
 

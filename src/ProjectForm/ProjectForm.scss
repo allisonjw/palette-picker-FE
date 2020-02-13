@@ -1,7 +1,7 @@
 %form_styling {
     height: 40px;
     font-size: 1.3em;
-    box-shadow: inset 1px 1px 2px 1px black;
+    // box-shadow: inset 1px 1px 2px 1px black;
     padding-left: 1.5%;
     outline: none;
     margin-left: 15px;
@@ -20,7 +20,19 @@
     @extend %form_styling;
 }
 
-.project_input {
+#input_project {
+    height: 34px;
+    border-radius: 6px;
+    font-family: 'Shadows Into Light', cursive;
+
+}
+
+.project_btn {
+    background-color: black;
+    border-radius: 6px;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+
 
 }
 
