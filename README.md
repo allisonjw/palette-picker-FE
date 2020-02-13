@@ -2,11 +2,11 @@
 
 Palette Picker is a color generator to assist in coming up with the right color palette for whatever you're working on. Users can generate a color palette, save it for future projects, edit/update saved projects and color palettes, and delete projects and palettes. So let you crafty side come out and find your perfect color palette!
 
-#### Live Application - [Heroku]()
+#### Live Application - [Heroku](https://fe-palette-of-colors-picker.herokuapp.com/)
 
 ## Collaborators 
 - [Allison Wagner](https://github.com/allisonjw) 
-- [Jessie ](https://github.com/Jessiewithani)
+- [Jessie Le-Ho](https://github.com/Jessiewithani)
 
 ### [Sprint Project Board](https://github.com/allisonjw/palette-picker-FE/projects/1)
 
@@ -29,7 +29,7 @@ Palette Picker is a color generator to assist in coming up with the right color 
 
 <details>
 <summary>Initial Wireframe design</summary>
-![InVision WireFrame](src/images/wireframe.png)
+[InVision WireFrame](https://github.com/allisonjw/palette-picker-FE/blob/master/src/images/wireframe.png)
 </details>
 
 ---
@@ -47,4 +47,4 @@ Palette Picker is a color generator to assist in coming up with the right color 
 
 ### Screenshots
 
-![]()
+![Screenshot](https://github.com/allisonjw/palette-picker-FE/blob/master/src/images/screenshot.png)
