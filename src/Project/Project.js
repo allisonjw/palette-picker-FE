@@ -9,21 +9,17 @@ import Palette from '../Palette/Palette';
 const Project = ({name, id, palettes}) => {
     const dispatch = useDispatch();
 
-    // console.log('pro', id)
-
-    const removeProject = async () => {
-      const body = {
-        id: id
-      }
+    const removeProject = async (id) => {
+      await deleteProject(id);
       dispatch(deleteSelectedProject(id));
-      deleteProject('projects', 'DELETE', body);
     };
 
     const displayPalettes = () => {
       return palettes.map(palette => {
         return <Palette {...palette} key={palette.id} />
       })
-    } 
+    };
+
     return(
       <section className="project-box">
         <h3 className="project_name">{name}</h3>
