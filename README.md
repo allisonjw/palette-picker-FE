@@ -25,12 +25,10 @@ Palette Picker is a color generator to assist in coming up with the right color 
 
 ---
 
-## WireFrame
+## Initial WireFrame
 
-<details>
-<summary>Initial Wireframe design</summary>
-[InVision WireFrame](https://github.com/allisonjw/palette-picker-FE/blob/master/src/images/wireframe.png)
-</details>
+![InVision WireFrame](https://github.com/allisonjw/palette-picker-FE/blob/master/src/images/wireframe.png)
+
 
 ---
 
